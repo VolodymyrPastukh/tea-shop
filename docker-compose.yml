@@ -1,0 +1,53 @@
+version: '3'
+
+services:
+  backend:
+    build: ./backend
+    environment:
+       DB_HOST: mysql
+       DB_NAME: teashop
+       DB_USER: teauser
+       DB_PASSWORD: teapass
+    volumes:
+      - ./backend:/usr/src/app # mount point
+    ports:
+      - 5001:80
+    depends_on:
+      - mysql
+
+  frontend:
+    image: php:apache
+    volumes:
+      - ./frontend:/var/www/html # mount
+    ports:
+      - 5000:80
+    depends_on:
+      - backend
+
+  mysql:
+   image: mysql:5.7
+   volumes:
+     - mysql-data:/var/lib/mysql
+   environment:
+     MYSQL_ROOT_PASSWORD: teapass
+     MYSQL_DATABASE: teashop
+     MYSQL_USER: teauser
+     MYSQL_PASSWORD: teapass
+
+
+  phpmyadmin:
+   depends_on:
+     - mysql
+   image: phpmyadmin/phpmyadmin:latest
+   container_name: flask_phpmyadmin
+   ports:
+     - "5010:80"
+   environment:
+     PMA_HOST: mysql
+     PMA_USER: teauser
+     PMA_PASSWORD: teapass
+     MYSQL_ROOT_PASSWORD: teapass
+
+volumes:
+ mysql-data:
+   driver: local
