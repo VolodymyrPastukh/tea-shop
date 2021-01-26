@@ -22,7 +22,7 @@
           <div id="main">
               <h2> Login </h2>
               <form action="types.php" method="post">
-                  <input type="text"><br>
+                  <input name="login" type="text"><br>
                   <input type="text"><br>
                   <input type="submit">
               </form>

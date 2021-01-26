@@ -20,13 +20,15 @@
           </div>
 
           <div id="main">
+            <form action="tea.php" method="post">
             <?php
             $json = file_get_contents('http://backend/teaTypes');
             $obj = json_decode($json);
             foreach ($obj as $data) {
-              echo "<li>{$data -> typeTitle}</li>";
+              echo "<input value='{$data -> typeTitle}' type='submit'/><br>";
             }
             ?>
+          </form>
           </div>
 
         </div>
