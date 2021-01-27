@@ -14,7 +14,8 @@
           <div id="nav">
               <h3>Navigation</h3>
               <ul>
-                  <li><a class="selected" href="index.php">Logout</a></li>
+                  <li><a class="selected" href="login.php">Logout</a></li>
+                  <li><a class="selected" href="newtea.php">Add tea</a></li>
                   <li><a class="selected" href="aboutUs.php">About us</a></li>
               </ul>
           </div>

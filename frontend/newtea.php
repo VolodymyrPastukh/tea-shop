@@ -14,19 +14,21 @@
           <div id="nav">
               <h3>Navigation</h3>
               <ul>
-                  <li><a class="selected" href="login.php">Login</a></li>
+                  <li><a class="selected" href="login.php">Logout</a></li>
+                  <li><a class="selected" href="tea.php">All Tea</a></li>
                   <li><a class="selected" href="aboutUs.php">About us</a></li>
               </ul>
           </div>
 
           <div id="main">
-              <h2> Welcome </h2>
-              <p> Here u can buy the best Chinese tea in Ukraine</p>
-              <p> We have a large variety of different types</p>
-              <p> Your satisfaction is our problem</p>
-              <?php
-              $json = file_get_contents('http://backend/setup');
-              ?>
+            <form action="addtea.php" method="post">
+              Add new tea to shop
+              Title<input name="teaTitle" type="text"><br>
+              Price<input name="teaPrice" type="text"><br>
+              Counts<input name="existingCount" type="text"><br>
+              Type<input name="teaTypes_id" type="text"><br>
+              <input type="submit">
+            </form>
           </div>
 
         </div>
