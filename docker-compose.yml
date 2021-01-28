@@ -9,7 +9,7 @@ services:
        DB_USER: teauser
        DB_PASSWORD: teapass
     volumes:
-      - ./backend:/usr/src/app # mount point
+      - ./backend:/usr/src/app
     ports:
       - 5001:80
     depends_on:
@@ -18,9 +18,9 @@ services:
   frontend:
     image: php:apache
     volumes:
-      - ./frontend:/var/www/html # mount
+      - ./frontend:/var/www/html
     ports:
-      - 443:80
+      - 80:80
     depends_on:
       - backend
 
