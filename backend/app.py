@@ -48,6 +48,7 @@ class Tea(db.Model):
 def create_tables():
     db.drop_all()
     db.create_all()
+    setup();
 
 
 
@@ -85,7 +86,6 @@ api.add_resource(TeaFind, '/tea')
 
 
 
-@app.route("/setup")
 def setup():
     types = ["Oolong","Puer","Green","White","Red"]
     tea1 = ["Chinese Wisdom","120$","455","2"]

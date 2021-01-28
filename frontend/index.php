@@ -24,9 +24,6 @@
               <p> Here u can buy the best Chinese tea in Ukraine</p>
               <p> We have a large variety of different types</p>
               <p> Your satisfaction is our problem</p>
-              <?php
-              $json = file_get_contents('http://backend/setup');
-              ?>
           </div>
 
         </div>
