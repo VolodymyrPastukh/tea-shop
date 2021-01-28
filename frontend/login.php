@@ -15,16 +15,16 @@
               <h3>Navigation</h3>
               <ul>
                   <li><a class="selected" href="login.php">Logout</a></li>
-                  <li><a class="selected" href="aboutUs.php">About us</a></li>
+                  <li><a class="selected" href="https://github.com/VolodymyrPastukh">About us</a></li>
               </ul>
           </div>
 
           <div id="main">
               <h2> Login </h2>
               <form action="types.php" method="post">
-                  <input name="login" type="text"><br>
-                  <input type="text"><br>
-                  <input type="submit">
+                  <input placeholder="login" name="login" type="text"><br>
+                  <input placeholder="password" type="text"><br>
+                  <input value="login" type="submit">
               </form>
           </div>
 

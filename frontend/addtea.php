@@ -16,16 +16,13 @@
               <ul>
                   <li><a class="selected" href="index.php">Logout</a></li>
                   <li><a class="selected" href="tea.php">All Tea</a></li>
-                  <li><a class="selected" href="aboutUs.php">About us</a></li>
+                  <li><a class="selected" href="https://github.com/VolodymyrPastukh">About us</a></li>
               </ul>
           </div>
 
           <div id="main">
           <?php
-          echo $_POST["teaTitle"];
-          echo $_POST["teaPrice"];
-          echo $_POST["existingCount"];
-          echo $_POST["teaTypes_id"];
+
 
           $url = 'http://backend/newtea';
           $data = array('teaTitle' => $_POST["teaTitle"],
@@ -41,7 +38,10 @@
                   'Content-Type: application/json'
                ]);
                $response = curl_exec($curl);
-               echo $response;
+               echo "<h2>Tea: [" . $_POST["teaTitle"] . "] added status |" . $response . "|</h2>";
+               echo "<h3>Price: - " . $_POST["teaPrice"] . "</h3>";
+               echo "<h3>Amount - " . $_POST["existingCount"] . "</h3>";
+               echo "<h3>Type_id - " . $_POST["teaTypes_id"] . "</h3>";
                curl_close($curl);
 
             ?>

@@ -16,17 +16,19 @@
               <ul>
                   <li><a class="selected" href="login.php">Logout</a></li>
                   <li><a class="selected" href="newtea.php">Add tea</a></li>
-                  <li><a class="selected" href="aboutUs.php">About us</a></li>
+                  <li><a class="selected" href="https://github.com/VolodymyrPastukh">About us</a></li>
               </ul>
           </div>
 
           <div id="main">
+
             <form action="tea.php" method="post">
             <?php
+            echo "<h2>Hello my friend " . $_POST['login'] . "</h2><br>";
             $json = file_get_contents('http://backend/teaTypes');
             $obj = json_decode($json);
             foreach ($obj as $data) {
-              echo "<input value='{$data -> typeTitle}' type='submit'/><br>";
+              echo "<li><input name='teaTypes_id' value='{$data -> typeTitle}' type='submit'/></li><br>";
             }
             ?>
           </form>

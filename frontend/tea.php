@@ -15,17 +15,21 @@
               <h3>Navigation</h3>
               <ul>
                   <li><a class="selected" href="login.php">Logout</a></li>
-                  <li><a class="selected" href="aboutUs.php">About us</a></li>
+                  <li><a class="selected" href="https://github.com/VolodymyrPastukh">About us</a></li>
               </ul>
           </div>
 
           <div id="main">
             <?php
-            $json = file_get_contents('http://backend/tea');
+            $json = file_get_contents("http://backend/tea");
             $obj = json_decode($json);
             foreach ($obj as $data) {
-              echo "<li>{$data -> teaTitle}</li>";
+              echo "<h2>{$data -> teaTitle}</h2>";
+              echo "[Price: ";
               echo $data -> teaPrice;
+              echo " | Amount: ";
+              echo $data -> existingCount;
+              echo " ]<br>";
             }
             ?>
           </div>

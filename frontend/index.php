@@ -15,7 +15,7 @@
               <h3>Navigation</h3>
               <ul>
                   <li><a class="selected" href="login.php">Login</a></li>
-                  <li><a class="selected" href="aboutUs.php">About us</a></li>
+                  <li><a class="selected" href="https://github.com/VolodymyrPastukh">About us</a></li>
               </ul>
           </div>
 
